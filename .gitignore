@@ -1,0 +1,15 @@
+bin/
+CMakeFiles/
+cocos2d/
+lib/
+nbproject/
+proj.android/
+proj.android-studio/
+proj.ios_mac/
+proj.linux/
+proj.tizen/
+proj.win8.1-universal/
+proj.win10/
+proj.win32/
+release/
+balloon.keystore
