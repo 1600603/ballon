@@ -13,7 +13,6 @@
           <Image Name="background_4.png" />
           <Image Name="background_5.png" />
           <Image Name="background_6.png" />
-          <Image Name="background_7.png" />
           <Image Name="balloon_1_1.png" />
           <Image Name="balloon_1_2.png" />
           <Image Name="balloon_1_pop.png" />
@@ -32,6 +31,21 @@
           <Image Name="balloon_6_1.png" />
           <Image Name="balloon_6_2.png" />
           <Image Name="balloon_6_pop.png" />
+          <Image Name="balloon_die_1.png" />
+          <Image Name="balloon_die_2.png" />
+          <Image Name="balloon_die_pop.png" />
+          <Image Name="balloon_life_1.png" />
+          <Image Name="balloon_life_2.png" />
+          <Image Name="balloon_life_pop.png" />
+          <Image Name="balloon_score_1.png" />
+          <Image Name="balloon_score_2.png" />
+          <Image Name="balloon_score_pop.png" />
+          <Image Name="gameover_boom.png" />
+          <Image Name="gameover_btn_leaderboards.png" />
+          <Image Name="gameover_btn_reload.png" />
+          <Image Name="gameover_btn_share.png" />
+          <Image Name="gameover_lbl_gameover.png" />
+          <Image Name="gameover_newrecord.png" />
           <Image Name="life_pop.png" />
           <Image Name="life.png" />
           <Image Name="title_screen_ballon_pop.png" />
@@ -44,6 +58,8 @@
         <Project Name="StatusLayer.csd" Type="Layer" />
         <Project Name="TitleScene_balloon.csd" Type="Node" />
         <Project Name="TitleScene.csd" Type="Layer" />
+        <Project Name="GameOverLayer.csd" Type="Layer" />
+        <Project Name="GameOverRecordLayer.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

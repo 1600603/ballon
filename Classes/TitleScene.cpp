@@ -84,7 +84,7 @@ void TitleScene::setCallbacks(Node *parent) {
 void TitleScene::drawBackground() {
     
        std::string pngfile = PNG_BACKGROUND_REPEAT;
-	
+	int num=1;
 	if (BACKGROUND_MAX_PATTERNS > 1) {
 		int num = RandomHelper::random_int(1, BACKGROUND_MAX_PATTERNS);
 		//if (num > 0) {
@@ -92,10 +92,18 @@ void TitleScene::drawBackground() {
 		//}
 	}
        
+        Color4B color_back;
+        if (num==1) color_back = Color4B(190,255,190,255);
+        if (num==2) color_back = Color4B(220,190,255,255);
+        if (num==3) color_back = Color4B(190,190,255,255);
+        if (num==4) color_back = Color4B(255,255,220,255);
+        if (num==5) color_back = Color4B(255,255,180,255);
+        if (num==6) color_back = Color4B(210,190,255,255);
+        
         log(pngfile.c_str());
 
 
-	Layer *layer = Layer::create();
+	LayerColor *layer = LayerColor::create(color_back);
 	Sprite *sprite = Sprite::create(pngfile);
         //Sprite *sprite = Sprite::createWithSpriteFrameName(pngfile);        
 	int col = ceil(GeneralHelper::size.width / sprite->getContentSize().width);

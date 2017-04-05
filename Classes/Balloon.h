@@ -24,6 +24,7 @@
 #define TYPE_BALLOON_MINUS_SCORE 52
 #define TYPE_BALLOON_MINUS_LIFE 53
 #define TYPE_BALLOON_BIG 54
+
 #define TYPE_BALLOON_RANDOM 100
 
 #define BALLOON_COUNT 6
@@ -56,7 +57,7 @@ public:
     Balloon();
     Balloon(const Balloon& orig);
     virtual ~Balloon();
-    static Balloon* createSprite(Node* parent, Vec2 position = Vec2(0,0), int type = TYPE_BALLOON_RANDOM);     
+    static Balloon* createSprite(Node* parent, int type = TYPE_BALLOON_RANDOM, Vec2 position = Vec2(0,0));     
     void onHit();    
     virtual void update (float dt);        
     int balloon_type=0;

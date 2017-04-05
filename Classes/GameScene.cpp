@@ -15,6 +15,7 @@
 #include "GeneralHelper.h"
 #include "AssetsHelper.h"
 #include "Balloon.h"
+#include "LostLayer.h"
 
 GameScene::GameScene() {
 }
@@ -56,14 +57,20 @@ bool GameScene::init()
 }
 
 void GameScene::update(float dt) {    
-    if (!this->gamestate == GAME_STATE_PLAYING) return;
-    this->checkGameOver();
+    if (this->gamestate != GAME_STATE_PLAYING) return;
+    //this->checkGameOver();
     timer_balloons += dt;
     if (timer_balloons > when_next_balloon) {
         //addballon;
         timer_balloons=0.0f;
         when_next_balloon = RandomHelper::random_real(INTERVAL_BALLOONS_MIN, INTERVAL_BALLOONS_MAX);
-        auto balao = Balloon::createSprite(this); 
+        int next_balloon = TYPE_BALLOON_RANDOM;
+        float chance = RandomHelper::random_real(0.0f,1.0f);
+        if (chance<=chance_balloon_gameover) next_balloon = TYPE_BALLOON_SKULL;        
+        else if (chance<=chance_balloon_lost_life) next_balloon = TYPE_BALLOON_MINUS_LIFE;        
+        else if (chance<=chance_balloon_lost_score) next_balloon = TYPE_BALLOON_MINUS_SCORE;        
+        
+        auto balao = Balloon::createSprite(this, next_balloon); 
     }
     
 }
@@ -132,8 +139,29 @@ void GameScene::addEvents()
 
 
 void GameScene::checkGameOver() {
+    if (this->lifes<=0) doGameOver();
+}
+
+void GameScene::doGameOver() {
+    this->gamestate = GAME_STATE_GAME_OVER;  
+    auto points = this->txtPoints;
+    auto setinvisible = CallFunc::create([points]() {
+        points->setVisible(false);
+    });
     
+    FadeOut* fadeOut = FadeOut::create(TIMER_DIE);         
+    txtPoints->runAction(Sequence::create(fadeOut, setinvisible, nullptr));
     
+    if (this->points > GeneralHelper::points_record) {
+        GeneralHelper::points_record = this->points;
+        this->addChild(LostLayer::createLayer(this, true), 5);
+    } else {
+        this->addChild(LostLayer::createLayer(this), 5);
+    }
+}
+
+GameState GameScene::getGameState() {
+    return gamestate;
 }
 
 
@@ -147,12 +175,18 @@ void GameScene::resetGame() {
         life1 = (Sprite*)status->getChildByName("life_1");
         life2 = (Sprite*)status->getChildByName("life_2");
         life3 = (Sprite*)status->getChildByName("life_3");
+        life4 = (Sprite*)status->getChildByName("life_4");
+        life5 = (Sprite*)status->getChildByName("life_5");
         txtPoints = (ui::Text*) status->getChildByName("txtPoints");
         this->addChild(status,10);
         lifes=3;
+        life4->setVisible(false);
+        life5->setVisible(false);
         points=0;    
         updateTxtPoints();
-        
+        chance_balloon_gameover= 0.05f;
+        chance_balloon_lost_life= 0.10f;
+        chance_balloon_lost_score= 0.15f;
         when_next_balloon = RandomHelper::random_real(INTERVAL_BALLOONS_MIN, INTERVAL_BALLOONS_MAX);
         timer_balloons = when_next_balloon + 1.0f;
         gamestate = GAME_STATE_PLAYING;
@@ -166,12 +200,58 @@ void GameScene::cleanLevel() {
 }
 
 
+void GameScene::removeLife() {
+    Sprite* life_icon;
+    if (lifes<=0) return;
+    if (lifes==1) life_icon = life1;
+    if (lifes==2) life_icon = life2;
+    if (lifes==3) life_icon = life3;
+    if (lifes==4) life_icon = life4;
+    if (lifes==5) life_icon = life5;
+    auto setinvisible = CallFunc::create([life_icon]() {
+        life_icon->setVisible(false);
+    });
+    std::string file_name_icon = PNG_STATUS_BAR_LIFE;
+    life_icon->setTexture(file_name_icon + "_pop.png");    
+    
+    FadeOut* fadeOut = FadeOut::create(TIMER_DIE);     
+    //life_icon->runAction(fadeOut);
+    life_icon->runAction(Sequence::create(fadeOut, setinvisible, nullptr));
+    lifes--;
+    checkGameOver();
+}
+
+
+
+void GameScene::removeAllLifes() {
+    while(lifes>0) removeLife();
+}
+
+
+void GameScene::addLife() {
+    Sprite* life_icon;
+    lifes++;
+    if (lifes>5)  {
+        lifes = 5;
+        return;
+    }
+    if (lifes==1) life_icon = life1;
+    if (lifes==2) life_icon = life2;
+    if (lifes==3) life_icon = life3;
+    if (lifes==4) life_icon = life4;
+    if (lifes==5) life_icon = life5;
+    life_icon->stopAllActions();
+    life_icon->setVisible(true);
+    std::string file_name_icon = PNG_STATUS_BAR_LIFE;
+    life_icon->setTexture(file_name_icon + ".png");               
+    
+}
 
 
 void GameScene::drawBackground() {
     
-       std::string pngfile = PNG_BACKGROUND_REPEAT;
-	
+     std::string pngfile = PNG_BACKGROUND_REPEAT;
+	int num=1;
 	if (BACKGROUND_MAX_PATTERNS > 1) {
 		int num = RandomHelper::random_int(1, BACKGROUND_MAX_PATTERNS);
 		//if (num > 0) {
@@ -179,10 +259,18 @@ void GameScene::drawBackground() {
 		//}
 	}
        
+        Color4B color_back;
+        if (num==1) color_back = Color4B(190,255,190,255);
+        if (num==2) color_back = Color4B(220,190,255,255);
+        if (num==3) color_back = Color4B(190,190,255,255);
+        if (num==4) color_back = Color4B(255,255,220,255);
+        if (num==5) color_back = Color4B(255,255,180,255);
+        if (num==6) color_back = Color4B(210,190,255,255);
+        
         log(pngfile.c_str());
 
 
-	Layer *layer = Layer::create();
+	LayerColor *layer = LayerColor::create(color_back);
 	Sprite *sprite = Sprite::create(pngfile);
         //Sprite *sprite = Sprite::createWithSpriteFrameName(pngfile);        
 	int col = ceil(GeneralHelper::size.width / sprite->getContentSize().width);
@@ -264,6 +352,12 @@ void GameScene::checkHit(Vec2 position) {
 
 void GameScene::addPoints(int p) {
     this->points = this->points + p;
+    updateTxtPoints();
+}
+
+void GameScene::removePoints(int p) {
+    this->points = this->points - p;
+    this->points = this->points<0?0:this->points;
     updateTxtPoints();
 }
 

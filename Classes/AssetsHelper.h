@@ -14,9 +14,10 @@
 #ifndef ASSETSHELPER_H
 #define ASSETSHELPER_H
 
-#define BACKGROUND_MAX_PATTERNS 7
+#define BACKGROUND_MAX_PATTERNS 6
 #define PNG_BACKGROUND_REPEAT "png/background"
 #define PNG_TITLE_SCREEN_BALLOON_POP "png/title_screen_ballon_pop.png"
+#define PNG_STATUS_BAR_LIFE "png/life"
 #define MAX_BACKGROUNDS 4
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) 

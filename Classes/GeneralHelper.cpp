@@ -14,6 +14,7 @@
 #include "GeneralHelper.h"
 
 Size GeneralHelper::size;
+int GeneralHelper::points_record=0;
 
 GeneralHelper::GeneralHelper() {
 }
@@ -27,4 +28,14 @@ GeneralHelper::~GeneralHelper() {
 void GeneralHelper::loadConfig() {
     GeneralHelper::size= Director::getInstance()->getVisibleSize();
 }
+
+
+void GeneralHelper::showLeaderboard() {
+   
+}
+
+void GeneralHelper::share() {
+   
+}
+
 

@@ -388,6 +388,33 @@ Classes/GeneralHelper.cpp.s:
 	$(MAKE) -f CMakeFiles/MyGame.dir/build.make CMakeFiles/MyGame.dir/Classes/GeneralHelper.cpp.s
 .PHONY : Classes/GeneralHelper.cpp.s
 
+Classes/LostLayer.o: Classes/LostLayer.cpp.o
+
+.PHONY : Classes/LostLayer.o
+
+# target to build an object file
+Classes/LostLayer.cpp.o:
+	$(MAKE) -f CMakeFiles/MyGame.dir/build.make CMakeFiles/MyGame.dir/Classes/LostLayer.cpp.o
+.PHONY : Classes/LostLayer.cpp.o
+
+Classes/LostLayer.i: Classes/LostLayer.cpp.i
+
+.PHONY : Classes/LostLayer.i
+
+# target to preprocess a source file
+Classes/LostLayer.cpp.i:
+	$(MAKE) -f CMakeFiles/MyGame.dir/build.make CMakeFiles/MyGame.dir/Classes/LostLayer.cpp.i
+.PHONY : Classes/LostLayer.cpp.i
+
+Classes/LostLayer.s: Classes/LostLayer.cpp.s
+
+.PHONY : Classes/LostLayer.s
+
+# target to generate assembly for a file
+Classes/LostLayer.cpp.s:
+	$(MAKE) -f CMakeFiles/MyGame.dir/build.make CMakeFiles/MyGame.dir/Classes/LostLayer.cpp.s
+.PHONY : Classes/LostLayer.cpp.s
+
 Classes/TitleScene.o: Classes/TitleScene.cpp.o
 
 .PHONY : Classes/TitleScene.o
@@ -476,6 +503,9 @@ help:
 	@echo "... Classes/GeneralHelper.o"
 	@echo "... Classes/GeneralHelper.i"
 	@echo "... Classes/GeneralHelper.s"
+	@echo "... Classes/LostLayer.o"
+	@echo "... Classes/LostLayer.i"
+	@echo "... Classes/LostLayer.s"
 	@echo "... Classes/TitleScene.o"
 	@echo "... Classes/TitleScene.i"
 	@echo "... Classes/TitleScene.s"

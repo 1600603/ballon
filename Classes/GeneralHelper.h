@@ -25,6 +25,9 @@ public:
     GeneralHelper(const GeneralHelper& orig);
     virtual ~GeneralHelper();
     static void loadConfig();
+    static void showLeaderboard();
+    static void share();
+    static int points_record;
     static Size size;
 private:
 

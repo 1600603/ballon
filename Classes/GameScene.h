@@ -31,7 +31,8 @@ using namespace cocos2d;
 
 enum _GameState {
     GAME_STATE_PAUSE,
-    GAME_STATE_PLAYING    
+    GAME_STATE_PLAYING,
+    GAME_STATE_GAME_OVER
 } typedef GameState;
 
 class GameScene: public cocos2d::LayerColor {
@@ -46,11 +47,18 @@ public:
     void cleanLevel();
     void resetGame();
     void drawBackground();
-    void checkGameOver();    
+    void checkGameOver();  
+    void doGameOver();
     void checkHit(Vec2 position) ;
     void addPoints(int p);
+    void removePoints(int p);
+    void removeLife();
+    void removeAllLifes();
+    void addLife();
     void updateTxtPoints();
+    void explodeAllBalloons();
     int getPoints();
+    GameState getGameState();
     CREATE_FUNC(GameScene);    
     
 private:
@@ -59,11 +67,16 @@ private:
     Sprite* life1;
     Sprite* life2;
     Sprite* life3;
+    Sprite* life4;
+    Sprite* life5;
     ui::Text*  txtPoints;
     int points=0;
     int lifes=3;
     float timer_balloons=0;
     float when_next_balloon=1.0f;
+    float chance_balloon_gameover= 0.05f;
+    float chance_balloon_lost_life= 0.10f;
+    float chance_balloon_lost_score= 0.15f;
 };
 
 

@@ -134,6 +134,7 @@ set(GAME_SRC
   Classes/GeneralHelper.cpp  
   Classes/GameScene.cpp  
   Classes/Balloon.cpp  
+  Classes/LostLayer.cpp  
   ${PLATFORM_SPECIFIC_SRC}
 )
 
@@ -145,6 +146,7 @@ set(GAME_HEADERS
   Classes/GeneralHelper.h
   Classes/GameScene.h
   Classes/Balloon.h
+  Classes/LostLayer.h
   ${PLATFORM_SPECIFIC_HEADERS}
 )
 
