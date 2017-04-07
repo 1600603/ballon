@@ -6,6 +6,114 @@
         <Folder Name="fonts">
           <TTF Name="Baloo-Regular.ttf" />
         </Folder>
+        <Folder Name="multires">
+          <Folder Name="hd">
+            <Folder Name="png">
+              <Image Name="background_1.png" />
+              <Image Name="background_2.png" />
+              <Image Name="background_3.png" />
+              <Image Name="background_4.png" />
+              <Image Name="background_5.png" />
+              <Image Name="background_6.png" />
+              <Image Name="balloon_1_1.png" />
+              <Image Name="balloon_1_2.png" />
+              <Image Name="balloon_1_pop.png" />
+              <Image Name="balloon_2_1.png" />
+              <Image Name="balloon_2_2.png" />
+              <Image Name="balloon_2_pop.png" />
+              <Image Name="balloon_3_1.png" />
+              <Image Name="balloon_3_2.png" />
+              <Image Name="balloon_3_pop.png" />
+              <Image Name="balloon_4_1.png" />
+              <Image Name="balloon_4_2.png" />
+              <Image Name="balloon_4_pop.png" />
+              <Image Name="balloon_5_1.png" />
+              <Image Name="balloon_5_2.png" />
+              <Image Name="balloon_5_pop.png" />
+              <Image Name="balloon_6_1.png" />
+              <Image Name="balloon_6_2.png" />
+              <Image Name="balloon_6_pop.png" />
+              <Image Name="balloon_die_1.png" />
+              <Image Name="balloon_die_2.png" />
+              <Image Name="balloon_die_pop.png" />
+              <Image Name="balloon_life_1.png" />
+              <Image Name="balloon_life_2.png" />
+              <Image Name="balloon_life_pop.png" />
+              <Image Name="balloon_pluslife_1.png" />
+              <Image Name="balloon_pluslife_2.png" />
+              <Image Name="balloon_pluslife_pop.png" />
+              <Image Name="balloon_score_1.png" />
+              <Image Name="balloon_score_2.png" />
+              <Image Name="balloon_score_pop.png" />
+              <Image Name="gameover_boom.png" />
+              <Image Name="gameover_btn_home.png" />
+              <Image Name="gameover_btn_leaderboards.png" />
+              <Image Name="gameover_btn_reload.png" />
+              <Image Name="gameover_btn_share.png" />
+              <Image Name="gameover_lbl_gameover.png" />
+              <Image Name="gameover_newrecord.png" />
+              <Image Name="life_pop.png" />
+              <Image Name="life.png" />
+              <Image Name="title_screen_ballon_pop.png" />
+              <Image Name="title_screen_ballon.png" />
+              <Image Name="title_screen_name.png" />
+            </Folder>
+            <PlistInfo Name="spritesheet.csi" Type="Plist" />
+          </Folder>
+          <Folder Name="sd">
+            <Folder Name="png">
+              <Image Name="background_1.png" />
+              <Image Name="background_2.png" />
+              <Image Name="background_3.png" />
+              <Image Name="background_4.png" />
+              <Image Name="background_5.png" />
+              <Image Name="background_6.png" />
+              <Image Name="balloon_1_1.png" />
+              <Image Name="balloon_1_2.png" />
+              <Image Name="balloon_1_pop.png" />
+              <Image Name="balloon_2_1.png" />
+              <Image Name="balloon_2_2.png" />
+              <Image Name="balloon_2_pop.png" />
+              <Image Name="balloon_3_1.png" />
+              <Image Name="balloon_3_2.png" />
+              <Image Name="balloon_3_pop.png" />
+              <Image Name="balloon_4_1.png" />
+              <Image Name="balloon_4_2.png" />
+              <Image Name="balloon_4_pop.png" />
+              <Image Name="balloon_5_1.png" />
+              <Image Name="balloon_5_2.png" />
+              <Image Name="balloon_5_pop.png" />
+              <Image Name="balloon_6_1.png" />
+              <Image Name="balloon_6_2.png" />
+              <Image Name="balloon_6_pop.png" />
+              <Image Name="balloon_die_1.png" />
+              <Image Name="balloon_die_2.png" />
+              <Image Name="balloon_die_pop.png" />
+              <Image Name="balloon_life_1.png" />
+              <Image Name="balloon_life_2.png" />
+              <Image Name="balloon_life_pop.png" />
+              <Image Name="balloon_pluslife_1.png" />
+              <Image Name="balloon_pluslife_2.png" />
+              <Image Name="balloon_pluslife_pop.png" />
+              <Image Name="balloon_score_1.png" />
+              <Image Name="balloon_score_2.png" />
+              <Image Name="balloon_score_pop.png" />
+              <Image Name="gameover_boom.png" />
+              <Image Name="gameover_btn_home.png" />
+              <Image Name="gameover_btn_leaderboards.png" />
+              <Image Name="gameover_btn_reload.png" />
+              <Image Name="gameover_btn_share.png" />
+              <Image Name="gameover_lbl_gameover.png" />
+              <Image Name="gameover_newrecord.png" />
+              <Image Name="life_pop.png" />
+              <Image Name="life.png" />
+              <Image Name="title_screen_ballon_pop.png" />
+              <Image Name="title_screen_ballon.png" />
+              <Image Name="title_screen_name.png" />
+            </Folder>
+            <PlistInfo Name="spritesheet.csi" Type="Plist" />
+          </Folder>
+        </Folder>
         <Folder Name="png">
           <Image Name="background_1.png" />
           <Image Name="background_2.png" />
@@ -70,6 +178,7 @@
         <Project Name="StatusLayer.csd" Type="Layer" />
         <Project Name="TitleScene_balloon.csd" Type="Node" />
         <Project Name="TitleScene.csd" Type="Layer" />
+        <PlistInfo Name="spritesheet.csi" Type="Plist" />
       </RootFolder>
     </Group>
   </SolutionFolder>

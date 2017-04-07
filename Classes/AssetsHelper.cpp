@@ -33,10 +33,12 @@ void AssetsHelper::preload() {
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect(SND_RECORD);
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect(SND_SCORE);
     CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect(SND_POP);
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("spritesheet.plist");
 }
 
 Sprite* AssetsHelper::spriteFactory(const std::string &filepath) {
-    return Sprite::create(filepath);
+    //return Sprite::create(filepath);
+    return Sprite::createWithSpriteFrameName(filepath);
 }
 
 void AssetsHelper::playEffect(const char* filepath) {

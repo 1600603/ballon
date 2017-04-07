@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.8235" />
             <PreSize X="0.8281" Y="0.1082" />
-            <FileData Type="Normal" Path="png/title_screen_name.png" Plist="" />
+            <FileData Type="MarkedSubImage" Path="png/title_screen_name.png" Plist="spritesheet.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="ballon" ActionTag="1036253095" Tag="11" IconVisible="True" LeftMargin="160.0000" RightMargin="160.0000" TopMargin="238.0000" BottomMargin="187.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">

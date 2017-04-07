@@ -44,7 +44,8 @@ Balloon* Balloon::createSprite(Node* parent,int balloon_number, int type, Vec2 p
     sprite->setAnchorPoint(Vec2(0.5f,0.5f));
     sprite->setFlipX(false);
     sprite->setFlipY(false);
-    sprite->setTexture(pngfile + "_1.png");
+    //sprite->setTexture(pngfile + "_1.png");
+    sprite->setSpriteFrame(pngfile + "_1.png");
     sprite->balloon_type = number;    
     sprite->gamescene = (GameScene*)parent;
     auto current_points = sprite->gamescene->getPoints();
@@ -74,7 +75,8 @@ void Balloon::onHit() {
         AssetsHelper::playEffect(SND_POP);
         gamescene->addPoints(1);
         //this->removeFromParent();
-        this->setTexture(file_name + "_pop.png");
+        //     this->setTexture(file_name + "_pop.png");
+        this->setSpriteFrame(file_name + "_pop.png");
         auto self = this;
         auto destroy = CallFunc::create([self] {
             self->removeFromParent();
@@ -90,7 +92,8 @@ void Balloon::onHit() {
         state = BALLOON_STATE_DIE;
         AssetsHelper::playEffect(SND_LIFE);
         gamescene->removeLife();        
-        this->setTexture(file_name + "_pop.png");
+        //this->setTexture(file_name + "_pop.png");
+        this->setSpriteFrame(file_name + "_pop.png");
         auto self = this;
         auto destroy = CallFunc::create([self] {
             self->removeFromParent();
@@ -105,7 +108,8 @@ void Balloon::onHit() {
         state = BALLOON_STATE_DIE;
         AssetsHelper::playEffect(SND_SCORE);
         gamescene->removePoints(5);       
-        this->setTexture(file_name + "_pop.png");
+        //this->setTexture(file_name + "_pop.png");
+        this->setSpriteFrame(file_name + "_pop.png");
         auto self = this;
         auto destroy = CallFunc::create([self] {
             self->removeFromParent();
@@ -121,7 +125,8 @@ void Balloon::onHit() {
         state = BALLOON_STATE_DIE;
         AssetsHelper::playEffect(SND_POP);
         gamescene->removeAllLifes();
-        this->setTexture(file_name + "_pop.png");
+        //this->setTexture(file_name + "_pop.png");
+        this->setSpriteFrame(file_name + "_pop.png");
         auto self = this;
         auto destroy = CallFunc::create([self] {
             self->removeFromParent();
@@ -137,7 +142,8 @@ void Balloon::onHit() {
         state = BALLOON_STATE_DIE;
         AssetsHelper::playEffect(SND_LIFESCORE);
         gamescene->addLife();
-        this->setTexture(file_name + "_pop.png");
+        //this->setTexture(file_name + "_pop.png");
+        this->setSpriteFrame(file_name + "_pop.png");
         auto self = this;
         auto destroy = CallFunc::create([self] {
             self->removeFromParent();
@@ -163,7 +169,8 @@ void Balloon::update (float dt) {
         if (timer_anim<0) {
             timer_anim = TIMER_ANIMATION;
             currentframe = currentframe==1?2:1;
-            this->setTexture(file_name+"_"+ Value(currentframe).asString() + ".png");
+            //this->setTexture(file_name+"_"+ Value(currentframe).asString() + ".png");
+            this->setSpriteFrame(file_name+"_"+ Value(currentframe).asString() + ".png");
         }
         
 

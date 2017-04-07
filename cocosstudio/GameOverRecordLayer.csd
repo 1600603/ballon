@@ -42,7 +42,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.4941" />
             <PreSize X="0.8562" Y="0.4824" />
-            <FileData Type="Normal" Path="png/gameover_boom.png" Plist="" />
+            <FileData Type="MarkedSubImage" Path="png/gameover_boom.png" Plist="spritesheet.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="lblGameOver" ActionTag="-1748330893" Tag="20" IconVisible="False" LeftMargin="68.4539" RightMargin="78.5461" TopMargin="26.2468" BottomMargin="315.7532" ctype="SpriteObjectData">
@@ -53,7 +53,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4842" Y="0.8406" />
             <PreSize X="0.5406" Y="0.1953" />
-            <FileData Type="Normal" Path="png/gameover_newrecord.png" Plist="" />
+            <FileData Type="MarkedSubImage" Path="png/gameover_newrecord.png" Plist="spritesheet.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="btnReload" ActionTag="-514730052" Tag="23" IconVisible="False" LeftMargin="106.0000" RightMargin="106.0000" TopMargin="350.5230" BottomMargin="20.4770" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="78" Scale9Height="32" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -66,8 +66,8 @@
             <PreSize X="0.3375" Y="0.1271" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="png/gameover_btn_reload.png" Plist="" />
-            <NormalFileData Type="Normal" Path="png/gameover_btn_reload.png" Plist="" />
+            <PressedFileData Type="MarkedSubImage" Path="png/gameover_btn_reload.png" Plist="spritesheet.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="png/gameover_btn_reload.png" Plist="spritesheet.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -93,8 +93,8 @@
             <PreSize X="0.1375" Y="0.0918" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="png/gameover_btn_home.png" Plist="" />
-            <NormalFileData Type="Normal" Path="png/gameover_btn_home.png" Plist="" />
+            <PressedFileData Type="MarkedSubImage" Path="png/gameover_btn_home.png" Plist="spritesheet.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="png/gameover_btn_home.png" Plist="spritesheet.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -108,8 +108,8 @@
             <PreSize X="0.1375" Y="0.0918" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="png/gameover_btn_leaderboards.png" Plist="" />
-            <NormalFileData Type="Normal" Path="png/gameover_btn_leaderboards.png" Plist="" />
+            <PressedFileData Type="MarkedSubImage" Path="png/gameover_btn_leaderboards.png" Plist="spritesheet.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="png/gameover_btn_leaderboards.png" Plist="spritesheet.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -123,8 +123,8 @@
             <PreSize X="0.1375" Y="0.0918" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="png/gameover_btn_share.png" Plist="" />
-            <NormalFileData Type="Normal" Path="png/gameover_btn_share.png" Plist="" />
+            <PressedFileData Type="MarkedSubImage" Path="png/gameover_btn_share.png" Plist="spritesheet.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="png/gameover_btn_share.png" Plist="spritesheet.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

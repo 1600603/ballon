@@ -26,7 +26,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="png/title_screen_ballon.png" Plist="" />
+            <FileData Type="MarkedSubImage" Path="png/title_screen_ballon.png" Plist="spritesheet.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

@@ -1,0 +1,56 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="spritesheet" Type="Plist" ID="46ee6a82-098f-4490-8fea-c86477b287af" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="2" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="png/background_1.png" />
+      <FilePathData Path="png/background_2.png" />
+      <FilePathData Path="png/background_3.png" />
+      <FilePathData Path="png/background_4.png" />
+      <FilePathData Path="png/background_5.png" />
+      <FilePathData Path="png/background_6.png" />
+      <FilePathData Path="png/balloon_1_1.png" />
+      <FilePathData Path="png/balloon_1_2.png" />
+      <FilePathData Path="png/balloon_1_pop.png" />
+      <FilePathData Path="png/balloon_2_1.png" />
+      <FilePathData Path="png/balloon_2_2.png" />
+      <FilePathData Path="png/balloon_2_pop.png" />
+      <FilePathData Path="png/balloon_3_1.png" />
+      <FilePathData Path="png/balloon_3_2.png" />
+      <FilePathData Path="png/balloon_3_pop.png" />
+      <FilePathData Path="png/balloon_4_1.png" />
+      <FilePathData Path="png/balloon_4_2.png" />
+      <FilePathData Path="png/balloon_4_pop.png" />
+      <FilePathData Path="png/balloon_5_1.png" />
+      <FilePathData Path="png/balloon_5_2.png" />
+      <FilePathData Path="png/balloon_5_pop.png" />
+      <FilePathData Path="png/balloon_6_1.png" />
+      <FilePathData Path="png/balloon_6_2.png" />
+      <FilePathData Path="png/balloon_6_pop.png" />
+      <FilePathData Path="png/balloon_die_1.png" />
+      <FilePathData Path="png/balloon_die_2.png" />
+      <FilePathData Path="png/balloon_die_pop.png" />
+      <FilePathData Path="png/balloon_life_1.png" />
+      <FilePathData Path="png/balloon_life_2.png" />
+      <FilePathData Path="png/balloon_life_pop.png" />
+      <FilePathData Path="png/balloon_pluslife_1.png" />
+      <FilePathData Path="png/balloon_pluslife_2.png" />
+      <FilePathData Path="png/balloon_pluslife_pop.png" />
+      <FilePathData Path="png/balloon_score_1.png" />
+      <FilePathData Path="png/balloon_score_2.png" />
+      <FilePathData Path="png/balloon_score_pop.png" />
+      <FilePathData Path="png/gameover_boom.png" />
+      <FilePathData Path="png/gameover_btn_home.png" />
+      <FilePathData Path="png/gameover_btn_leaderboards.png" />
+      <FilePathData Path="png/gameover_btn_reload.png" />
+      <FilePathData Path="png/gameover_btn_share.png" />
+      <FilePathData Path="png/gameover_lbl_gameover.png" />
+      <FilePathData Path="png/gameover_newrecord.png" />
+      <FilePathData Path="png/life_pop.png" />
+      <FilePathData Path="png/life.png" />
+      <FilePathData Path="png/title_screen_ballon_pop.png" />
+      <FilePathData Path="png/title_screen_ballon.png" />
+      <FilePathData Path="png/title_screen_name.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

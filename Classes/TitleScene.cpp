@@ -109,8 +109,8 @@ void TitleScene::drawBackground() {
 
 
 	LayerColor *layer = LayerColor::create(color_back);
-	Sprite *sprite = Sprite::create(pngfile);
-        //Sprite *sprite = Sprite::createWithSpriteFrameName(pngfile);
+	//Sprite *sprite = Sprite::create(pngfile);
+        Sprite *sprite = Sprite::createWithSpriteFrameName(pngfile);
 	int col = ceil(GeneralHelper::size.width / sprite->getContentSize().width);
 	int lin = ceil(GeneralHelper::size.height / sprite->getContentSize().height);
 	float width = sprite->getContentSize().width ;
@@ -123,8 +123,8 @@ void TitleScene::drawBackground() {
 
 	for (int i=0;i<col;i++)
 		for (int j = 0; j < lin; j++) {
-			auto tile = Sprite::create(pngfile);
-                        //auto tile = Sprite::createWithSpriteFrameName(pngfile);
+			//auto tile = Sprite::create(pngfile);
+                        auto tile = Sprite::createWithSpriteFrameName(pngfile);
 			tile->setAnchorPoint(Vect(0, 0));
 			tile->setPosition(Vect(width*i, height*j));
 			layer->addChild(tile);
@@ -162,7 +162,8 @@ void TitleScene::addEvents()
 	auto nodeRect = Rect(balloon_x, balloon_x, balloon_width, balloon_height);
         log("ballon x: %f; y: %f", origin_world.x, origin_world.y);
         if (nodeRect.containsPoint(p)) {
-            ((Sprite*)self->ballo->getChildByName("balloon"))->setTexture("png/title_screen_ballon_pop.png");
+            //((Sprite*)self->ballo->getChildByName("balloon"))->setTexture("png/title_screen_ballon_pop.png");
+            ((Sprite*)self->ballo->getChildByName("balloon"))->setSpriteFrame("png/title_screen_ballon_pop.png");
             FadeOut* fadeOut = FadeOut::create(0.75f);
             self->ballo->runAction(fadeOut);            
             AssetsHelper::playEffect(SND_POP);

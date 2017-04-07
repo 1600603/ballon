@@ -221,7 +221,8 @@ void GameScene::removeLife() {
         life_icon->setVisible(false);
     });
     std::string file_name_icon = PNG_STATUS_BAR_LIFE;
-    life_icon->setTexture(file_name_icon + "_pop.png");
+    //life_icon->setTexture(file_name_icon + "_pop.png");
+    life_icon->setSpriteFrame(file_name_icon + "_pop.png");
 
     FadeOut* fadeOut = FadeOut::create(TIMER_DIE);
     //life_icon->runAction(fadeOut);
@@ -251,7 +252,8 @@ void GameScene::addLife() {
     if (lifes==5) life_icon = life5;
     life_icon->stopAllActions();    
     std::string file_name_icon = PNG_STATUS_BAR_LIFE;
-    life_icon->setTexture(file_name_icon + ".png");
+    //life_icon->setTexture(file_name_icon + ".png");
+    life_icon->setSpriteFrame(file_name_icon + ".png");
     life_icon->setVisible(true);
     FadeIn* fadeIn = FadeIn::create(TIMER_DIE);
     life_icon->runAction(fadeIn);
@@ -282,8 +284,8 @@ void GameScene::drawBackground() {
 
 
 	LayerColor *layer = LayerColor::create(color_back);
-	Sprite *sprite = Sprite::create(pngfile);
-        //Sprite *sprite = Sprite::createWithSpriteFrameName(pngfile);
+	//Sprite *sprite = Sprite::create(pngfile);
+        Sprite *sprite = Sprite::createWithSpriteFrameName(pngfile);
 	int col = ceil(GeneralHelper::size.width / sprite->getContentSize().width);
 	int lin = ceil(GeneralHelper::size.height / sprite->getContentSize().height);
 	float width = sprite->getContentSize().width ;
@@ -296,8 +298,8 @@ void GameScene::drawBackground() {
 
 	for (int i=0;i<col;i++)
 		for (int j = 0; j < lin; j++) {
-			auto tile = Sprite::create(pngfile);
-                        //auto tile = Sprite::createWithSpriteFrameName(pngfile);
+			//auto tile = Sprite::create(pngfile);
+                        auto tile = Sprite::createWithSpriteFrameName(pngfile);
 			tile->setAnchorPoint(Vect(0, 0));
 			tile->setPosition(Vect(width*i, height*j));
 			layer->addChild(tile);
