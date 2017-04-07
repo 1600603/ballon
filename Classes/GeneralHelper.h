@@ -16,6 +16,20 @@
 
 #include "cocos2d.h"
 
+#ifdef SDKBOX_ENABLED
+#include "pluginsdkboxplay/PluginSdkboxPlay.h"
+#endif
+#ifdef SDKBOX_ENABLED
+// #include "pluginshare/PluginShare.h"
+#endif
+#ifdef SDKBOX_ENABLED
+#include "pluginadmob/PluginAdMob.h"
+#endif
+#ifdef SDKBOX_ENABLED
+#include "plugingoogleanalytics/PluginGoogleAnalytics.h"
+#endif
+
+
 
 using namespace cocos2d;
 
@@ -27,8 +41,17 @@ public:
     static void loadConfig();
     static void showLeaderboard();
     static void share();
+    static void newRecord(int points);
+    static void sendScoreLeaderboard(int points);
+    static void logEvent(const std::string & eventCategory ,
+                       const std::string & eventAction ,
+                       const std::string & eventLabel ,
+                       int value );
+    static void showAd();
+    static void hideAd();
     static int points_record;
     static Size size;
+    
 private:
 
 };

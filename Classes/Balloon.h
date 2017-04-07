@@ -23,7 +23,8 @@
 #define TYPE_BALLOON_SKULL 51
 #define TYPE_BALLOON_MINUS_SCORE 52
 #define TYPE_BALLOON_MINUS_LIFE 53
-#define TYPE_BALLOON_BIG 54
+#define TYPE_BALLOON_PLUS_LIFE 54
+#define TYPE_BALLOON_BIG 55
 
 #define TYPE_BALLOON_RANDOM 100
 
@@ -31,13 +32,19 @@
 
 #define FILE_BALLOON "png/balloon"
 
-#define MAX_SPEED_INITIAL 100.0f
-#define MIN_SPEED_INITIAL 50.0f
+//#define MAX_SPEED_INITIAL 100.0f
+//#define MIN_SPEED_INITIAL 50.0f
+
+#define MAX_SPEED_INITIAL 120.0f
+#define MIN_SPEED_INITIAL 60.0f
+
 
 #define TAG_BALLOON 555
 
 #define TIMER_DIE 0.75f
-#define SPEED_STEP 0.05f
+#define TIMER_ANIMATION 0.25f;
+//#define SPEED_STEP 0.05f
+#define SPEED_STEP 0.075f
 #define MAX_SPEED_MULTIPLIER 5.0f
 
 #include "cocos2d.h"
@@ -57,16 +64,19 @@ public:
     Balloon();
     Balloon(const Balloon& orig);
     virtual ~Balloon();
-    static Balloon* createSprite(Node* parent, int type = TYPE_BALLOON_RANDOM, Vec2 position = Vec2(0,0));     
+    static Balloon* createSprite(Node* parent, int balloon_number=0, int type = TYPE_BALLOON_RANDOM, Vec2 position = Vec2(0,0));     
     void onHit();    
     virtual void update (float dt);        
     int balloon_type=0;
     BalloonState state = BALLOON_STATE_NORMAL;
     float speed = MIN_SPEED_INITIAL;
+    int balloon_number;
     GameScene* gamescene;
     CREATE_FUNC(Balloon);    
 private:
     float time_left_to_die=TIMER_DIE;
+    float timer_anim=TIMER_ANIMATION;
+    int currentframe=1;
     std::string file_name;
 };
 

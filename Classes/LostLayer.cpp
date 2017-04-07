@@ -15,8 +15,10 @@
 #include "GeneralHelper.h"
 //#include "StartScene.h"
 #include "ui/UIText.h"
-//#include "Language.h"
+#include "Language.h"
 #include "GameScene.h"
+#include "TitleScene.h"
+
 
 GameScene* LostLayer::gamescene = nullptr;
 
@@ -26,7 +28,7 @@ LostLayer::LostLayer()
 
 LostLayer::~LostLayer()
 {
-    //GameHelper::hideAd();
+    GeneralHelper::hideAd();
 }
 
 cocos2d::LayerColor* LostLayer::createLayer(GameScene* gs, bool isRecord) {
@@ -55,6 +57,14 @@ cocos2d::LayerColor* LostLayer::createLayer(GameScene* gs, bool isRecord) {
 
     ui::Text* txtPoints = dynamic_cast<ui::Text *>(layer_in_file->getChildByName("txtPoints"));
     txtPoints->setText(Value(LostLayer::gamescene->getPoints()).asString());
+    
+    if (!isRecord) {
+        ui::Text* txtBest = dynamic_cast<ui::Text *>(layer_in_file->getChildByName("txtBest"));
+        txtBest->setText(Language::msg(MSG_BEST)+Value(GeneralHelper::points_record).asString());
+    }
+    
+    
+    
     return layer;
 }
 
@@ -68,7 +78,7 @@ bool LostLayer::init() {
 }
 
 void LostLayer::setCallbacks(Node* parent) {
-	/*ui::Button *btnHome = (ui::Button *)parent->getChildByName("btnHome");
+	ui::Button *btnHome = (ui::Button *)parent->getChildByName("btnHome");
 	btnHome->setTouchEnabled(true);
 	btnHome->setPressedActionEnabled(true);
 	btnHome->addTouchEventListener([](Ref* ref, ui::Widget::TouchEventType type) {
@@ -79,16 +89,17 @@ void LostLayer::setCallbacks(Node* parent) {
 
 		}
 		else if (type == ui::Widget::TouchEventType::ENDED) {
-			auto scene = StartScene::createScene();
+			auto scene = TitleScene::createScene();
 			//TransitionScene *transition = TransitionFade::create(1, scene);
 			//Director::getInstance()->replaceScene(transition);
-			Director::getInstance()->replaceScene(TransitionSlideInL::create(0.25f, scene));
+			//Director::getInstance()->replaceScene(TransitionSlideInL::create(0.25f, scene));
+                        Director::getInstance()->replaceScene(TransitionFade::create(1, scene, Color3B(0,0,0)));
 
 		}
 		else if (type == ui::Widget::TouchEventType::CANCELED) {
 
 		}
-	});*/
+	});
 
 	ui::Button *btnLeaderboard = (ui::Button *)parent->getChildByName("btnLeaderboard");
 	btnLeaderboard->setTouchEnabled(true);
@@ -170,6 +181,6 @@ void LostLayer::onEnter() {
     auto move = MoveTo::create(0.5f, Vect(position.x, position.y)) ;
     auto easing = EaseBackOut::create(move);
     winlayer->runAction(easing);
-    //GameHelper::showAd();
+    GeneralHelper::showAd();
     
 }

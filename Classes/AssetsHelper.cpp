@@ -25,11 +25,36 @@ AssetsHelper::AssetsHelper(const AssetsHelper& orig) {
 AssetsHelper::~AssetsHelper() {
 }
 
+void AssetsHelper::preload() {       
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(SND_BACKGROUND);
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect(SND_GAMEOVER);
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect(SND_LIFE);
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect(SND_LIFESCORE);
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect(SND_RECORD);
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect(SND_SCORE);
+    CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect(SND_POP);
+}
+
 Sprite* AssetsHelper::spriteFactory(const std::string &filepath) {
     return Sprite::create(filepath);
 }
 
 void AssetsHelper::playEffect(const char* filepath) {
     CocosDenshion::SimpleAudioEngine::getInstance()->playEffect(filepath);
+}
+
+void AssetsHelper::playMusic(const char* filepath) {
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic(filepath, true);  
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->setBackgroundMusicVolume(0.50f);
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->setEffectsVolume(1.0f);
+}
+
+void AssetsHelper::pauseMusic() {        
+    CocosDenshion::SimpleAudioEngine::getInstance()->rewindBackgroundMusic();
+    CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();        
+}
+
+void AssetsHelper::resumeMusic() {       
+    CocosDenshion::SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }
 

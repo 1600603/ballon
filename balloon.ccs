@@ -37,10 +37,14 @@
           <Image Name="balloon_life_1.png" />
           <Image Name="balloon_life_2.png" />
           <Image Name="balloon_life_pop.png" />
+          <Image Name="balloon_pluslife_1.png" />
+          <Image Name="balloon_pluslife_2.png" />
+          <Image Name="balloon_pluslife_pop.png" />
           <Image Name="balloon_score_1.png" />
           <Image Name="balloon_score_2.png" />
           <Image Name="balloon_score_pop.png" />
           <Image Name="gameover_boom.png" />
+          <Image Name="gameover_btn_home.png" />
           <Image Name="gameover_btn_leaderboards.png" />
           <Image Name="gameover_btn_reload.png" />
           <Image Name="gameover_btn_share.png" />
@@ -53,13 +57,19 @@
           <Image Name="title_screen_name.png" />
         </Folder>
         <Folder Name="snd">
-          <Audio Name="pop.wav" />
+          <Audio Name="background.mp3" />
+          <Audio Name="game-over.mp3" />
+          <Audio Name="life.mp3" />
+          <Audio Name="life-score.mp3" />
+          <Audio Name="new-record.mp3" />
+          <Audio Name="pop.mp3" />
+          <Audio Name="score.mp3" />
         </Folder>
+        <Project Name="GameOverLayer.csd" Type="Layer" />
+        <Project Name="GameOverRecordLayer.csd" Type="Layer" />
         <Project Name="StatusLayer.csd" Type="Layer" />
         <Project Name="TitleScene_balloon.csd" Type="Node" />
         <Project Name="TitleScene.csd" Type="Layer" />
-        <Project Name="GameOverLayer.csd" Type="Layer" />
-        <Project Name="GameOverRecordLayer.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

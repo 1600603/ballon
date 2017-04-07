@@ -26,8 +26,8 @@
 
 using namespace cocos2d;
 
-#define INTERVAL_BALLOONS_MIN 1.0f
-#define INTERVAL_BALLOONS_MAX 2.0f
+#define INTERVAL_BALLOONS_MIN 0.25f
+#define INTERVAL_BALLOONS_MAX 1.5f
 
 enum _GameState {
     GAME_STATE_PAUSE,
@@ -77,6 +77,8 @@ private:
     float chance_balloon_gameover= 0.05f;
     float chance_balloon_lost_life= 0.10f;
     float chance_balloon_lost_score= 0.15f;
+    float chance_balloon_plus_life= 0.20f;
+    int balloon_count=0;
 };
 
 

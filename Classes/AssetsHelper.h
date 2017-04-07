@@ -20,13 +20,20 @@
 #define PNG_STATUS_BAR_LIFE "png/life"
 #define MAX_BACKGROUNDS 4
 
+/*
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) 
 #define SND_CLICK "snd/click.ogg"
 #else
 #define SND_CLICK "snd/click.mp3"
-#endif
+#endif*/
 
-#define SND_POP "snd/pop.wav"
+#define SND_POP "snd/pop.mp3"
+#define SND_BACKGROUND "snd/background.mp3"
+#define SND_GAMEOVER "snd/game-over.mp3"
+#define SND_LIFE "snd/life.mp3"
+#define SND_LIFESCORE "snd/life-score.mp3"
+#define SND_RECORD "snd/new-record.mp3"
+#define SND_SCORE "snd/score.mp3"
 
 
 #include "cocos2d.h"
@@ -39,6 +46,10 @@ public:
     AssetsHelper(const AssetsHelper& orig);
     static Sprite* spriteFactory(const std::string &filepath);
     static void playEffect(const char* filepath);
+    static void playMusic(const char* filepath);
+    static void pauseMusic();
+    static void resumeMusic();
+    static void preload();
     virtual ~AssetsHelper();
 private:
 

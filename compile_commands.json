@@ -36,6 +36,11 @@
 },
 {
   "directory": "/home/guilherme/workspace/balloon",
+  "command": "/usr/bin/g++   -DLINUX -I/usr/local/include/GLFW -I/usr/include/GLFW -I/home/guilherme/workspace/balloon/cocos2d/cocos -I/home/guilherme/workspace/balloon/cocos2d/cocos/platform -I/home/guilherme/workspace/balloon/cocos2d/cocos/audio/include -I/home/guilherme/workspace/balloon/Classes   -std=c++11 -Wno-deprecated-declarations -Wno-reorder -g -Wall -DCOCOS2D_DEBUG=1   -o CMakeFiles/MyGame.dir/Classes/Language.cpp.o -c /home/guilherme/workspace/balloon/Classes/Language.cpp",
+  "file": "/home/guilherme/workspace/balloon/Classes/Language.cpp"
+},
+{
+  "directory": "/home/guilherme/workspace/balloon",
   "command": "/usr/bin/g++   -DLINUX -I/usr/local/include/GLFW -I/usr/include/GLFW -I/home/guilherme/workspace/balloon/cocos2d/cocos -I/home/guilherme/workspace/balloon/cocos2d/cocos/platform -I/home/guilherme/workspace/balloon/cocos2d/cocos/audio/include -I/home/guilherme/workspace/balloon/Classes   -std=c++11 -Wno-deprecated-declarations -Wno-reorder -g -Wall -DCOCOS2D_DEBUG=1   -o CMakeFiles/MyGame.dir/proj.linux/main.cpp.o -c /home/guilherme/workspace/balloon/proj.linux/main.cpp",
   "file": "/home/guilherme/workspace/balloon/proj.linux/main.cpp"
 },

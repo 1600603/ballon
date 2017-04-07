@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-/* 
+/*
  * File:   TitleScreen.cpp
  * Author: guilherme
- * 
+ *
  * Created on 21 de Março de 2017, 23:43
  */
 
@@ -16,6 +16,7 @@
 #include "AssetsHelper.h"
 //#include "ConfigScene.h"
 #include "GameScene.h"
+#include "Language.h"
 
 TitleScene::TitleScene() {
 }
@@ -27,7 +28,7 @@ TitleScene::~TitleScene() {
 }
 
 
-cocos2d::Scene* TitleScene::createScene() {    
+cocos2d::Scene* TitleScene::createScene() {
     auto scene = Scene::create();
     auto layer = TitleScene::create();
 
@@ -39,19 +40,23 @@ cocos2d::Scene* TitleScene::createScene() {
     ballon->runAction(timeline); //set the timeline action
     timeline->gotoFrameAndPlay(0, true); //Actually play it
     //coins->setPosition(layer_in_file->convertToNodeSpace(Vect(coins->getPositionX(), GeneralHelper::size.height - coins->getBoundingBox().size.height/2 - 5)));
-    layer->addChild(layer_in_file, 1);        
+    layer->addChild(layer_in_file, 1);
     scene->addChild(layer);
-    TitleScene::setCallbacks(layer_in_file);      
+    TitleScene::setCallbacks(layer_in_file);
     
+    ui::Text* txtStart = dynamic_cast<ui::Text *>(layer_in_file->getChildByName("txtStart"));
+    txtStart->setText(Language::msg(MSG_START));
+
     layer->ballo = ballon;
     return scene;
 }
 bool TitleScene::init() {
-    if (!LayerColor::initWithColor(Color4B(255,255,0,255))) {	
+    if (!LayerColor::initWithColor(Color4B(0,0,0,255))) {
 	return false;
     }
-    this->drawBackground();    
+    this->drawBackground();
     addEvents();
+    AssetsHelper::playMusic(SND_BACKGROUND);
     return true;
 }
 void TitleScene::setCallbacks(Node *parent) {
@@ -59,39 +64,39 @@ void TitleScene::setCallbacks(Node *parent) {
     /*
     ui::Button *btnPlay = (ui::Button *)parent->getChildByName("btnPlay");
     btnPlay->setTouchEnabled(true);
-    btnPlay->setPressedActionEnabled(true);	
+    btnPlay->setPressedActionEnabled(true);
     btnPlay->addTouchEventListener([](Ref* ref, ui::Widget::TouchEventType type) {
         if (type == ui::Widget::TouchEventType::BEGAN) {
-                    
+
         }
         else if (type == ui::Widget::TouchEventType::MOVED) {
 
         }
         else if (type == ui::Widget::TouchEventType::ENDED) {
             AssetsHelper::playEffect(SND_CLICK);
-            auto scene = GameScene::createScene();            
+            auto scene = GameScene::createScene();
             Director::getInstance()->replaceScene(TransitionFade::create(1, scene, Color3B(0,0,0)));
             log("btnPlay");
         }
         else if (type == ui::Widget::TouchEventType::CANCELED) {
 
-        }		
+        }
     });*/
-    
+
    log("set callbacks end");
 }
 
 void TitleScene::drawBackground() {
-    
+
        std::string pngfile = PNG_BACKGROUND_REPEAT;
 	int num=1;
 	if (BACKGROUND_MAX_PATTERNS > 1) {
-		int num = RandomHelper::random_int(1, BACKGROUND_MAX_PATTERNS);
+		num = RandomHelper::random_int(1, BACKGROUND_MAX_PATTERNS);
 		//if (num > 0) {
 			pngfile = pngfile + "_" + Value(num).asString() + ".png";
 		//}
 	}
-       
+
         Color4B color_back;
         if (num==1) color_back = Color4B(190,255,190,255);
         if (num==2) color_back = Color4B(220,190,255,255);
@@ -99,13 +104,13 @@ void TitleScene::drawBackground() {
         if (num==4) color_back = Color4B(255,255,220,255);
         if (num==5) color_back = Color4B(255,255,180,255);
         if (num==6) color_back = Color4B(210,190,255,255);
-        
-        log(pngfile.c_str());
+
+      //  log(pngfile.c_str());
 
 
 	LayerColor *layer = LayerColor::create(color_back);
 	Sprite *sprite = Sprite::create(pngfile);
-        //Sprite *sprite = Sprite::createWithSpriteFrameName(pngfile);        
+        //Sprite *sprite = Sprite::createWithSpriteFrameName(pngfile);
 	int col = ceil(GeneralHelper::size.width / sprite->getContentSize().width);
 	int lin = ceil(GeneralHelper::size.height / sprite->getContentSize().height);
 	float width = sprite->getContentSize().width ;
@@ -114,8 +119,8 @@ void TitleScene::drawBackground() {
 	layer->setAnchorPoint(Vect(0.0f, 0.0f));
 	//layer->setPosition(Vect(GameHelper::screen_center_x, GameHelper::screen_center_y));
 	layer->setPosition(layer->convertToNodeSpace(Vect(0, 0)));
-	
-	
+
+
 	for (int i=0;i<col;i++)
 		for (int j = 0; j < lin; j++) {
 			auto tile = Sprite::create(pngfile);
@@ -123,13 +128,13 @@ void TitleScene::drawBackground() {
 			tile->setAnchorPoint(Vect(0, 0));
 			tile->setPosition(Vect(width*i, height*j));
 			layer->addChild(tile);
-			
+
 		}
 
-	
+
 	//layer->setPosition(Vect(GameHelper::screen_center_x, GameHelper::screen_center_y));
 	this->addChild(layer);
-    
+
 }
 
 
@@ -139,26 +144,29 @@ void TitleScene::addEvents()
     //listener->setSwallowTouches(true);
     auto self = this;
     listener->onTouchBegan = [self](cocos2d::Touch* touch, cocos2d::Event* event)
-    {   
-        Vec2 p = touch->getLocation();        
-        log("touch begin at x: %f; y: %f", p.x, p.y);       
-        
+    {
+        Vec2 p = touch->getLocation();
+        log("touch begin at x: %f; y: %f", p.x, p.y);
+
         auto nodeBox = self->ballo->getChildByName("balloon")->getBoundingBox();
-        
+
         auto origin_world = self->ballo->convertToWorldSpace(nodeBox.origin);
-        
-        
+
+
         auto balloon_x = origin_world.x;
         auto balloon_y = origin_world.y;
         auto balloon_width = nodeBox.size.width;
-        auto balloon_height = nodeBox.size.height;      
-        
-        
+        auto balloon_height = nodeBox.size.height;
+
+
 	auto nodeRect = Rect(balloon_x, balloon_x, balloon_width, balloon_height);
-        log("ballon x: %f; y: %f", origin_world.x, origin_world.y);       
+        log("ballon x: %f; y: %f", origin_world.x, origin_world.y);
         if (nodeRect.containsPoint(p)) {
+            ((Sprite*)self->ballo->getChildByName("balloon"))->setTexture("png/title_screen_ballon_pop.png");
+            FadeOut* fadeOut = FadeOut::create(0.75f);
+            self->ballo->runAction(fadeOut);            
             AssetsHelper::playEffect(SND_POP);
-            auto scene = GameScene::createScene();            
+            auto scene = GameScene::createScene();
             Director::getInstance()->replaceScene(TransitionFade::create(1, scene, Color3B(0,0,0)));
             log("OK");
         }
@@ -168,10 +176,10 @@ void TitleScene::addEvents()
     listener->onTouchEnded = [self](cocos2d::Touch* touch, cocos2d::Event* event)
     {
         //MySprite::touchEvent(touch);
-        
+
     };
-    
-    //dispatcher->addEventListenerWithSceneGraphPriority(keylistener, this);   
+
+    //dispatcher->addEventListenerWithSceneGraphPriority(keylistener, this);
     cocos2d::Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
 
 }

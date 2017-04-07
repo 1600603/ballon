@@ -388,6 +388,33 @@ Classes/GeneralHelper.cpp.s:
 	$(MAKE) -f CMakeFiles/MyGame.dir/build.make CMakeFiles/MyGame.dir/Classes/GeneralHelper.cpp.s
 .PHONY : Classes/GeneralHelper.cpp.s
 
+Classes/Language.o: Classes/Language.cpp.o
+
+.PHONY : Classes/Language.o
+
+# target to build an object file
+Classes/Language.cpp.o:
+	$(MAKE) -f CMakeFiles/MyGame.dir/build.make CMakeFiles/MyGame.dir/Classes/Language.cpp.o
+.PHONY : Classes/Language.cpp.o
+
+Classes/Language.i: Classes/Language.cpp.i
+
+.PHONY : Classes/Language.i
+
+# target to preprocess a source file
+Classes/Language.cpp.i:
+	$(MAKE) -f CMakeFiles/MyGame.dir/build.make CMakeFiles/MyGame.dir/Classes/Language.cpp.i
+.PHONY : Classes/Language.cpp.i
+
+Classes/Language.s: Classes/Language.cpp.s
+
+.PHONY : Classes/Language.s
+
+# target to generate assembly for a file
+Classes/Language.cpp.s:
+	$(MAKE) -f CMakeFiles/MyGame.dir/build.make CMakeFiles/MyGame.dir/Classes/Language.cpp.s
+.PHONY : Classes/Language.cpp.s
+
 Classes/LostLayer.o: Classes/LostLayer.cpp.o
 
 .PHONY : Classes/LostLayer.o
@@ -503,6 +530,9 @@ help:
 	@echo "... Classes/GeneralHelper.o"
 	@echo "... Classes/GeneralHelper.i"
 	@echo "... Classes/GeneralHelper.s"
+	@echo "... Classes/Language.o"
+	@echo "... Classes/Language.i"
+	@echo "... Classes/Language.s"
 	@echo "... Classes/LostLayer.o"
 	@echo "... Classes/LostLayer.i"
 	@echo "... Classes/LostLayer.s"

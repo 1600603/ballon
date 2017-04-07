@@ -38,7 +38,7 @@
             <Size X="274.0000" Y="205.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="160.0000" Y="210.0000" />
-            <Scale ScaleX="0.9100" ScaleY="0.9100" />
+            <Scale ScaleX="0.8000" ScaleY="0.8000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.4941" />
             <PreSize X="0.8562" Y="0.4824" />
@@ -55,36 +55,6 @@
             <PreSize X="0.5406" Y="0.1953" />
             <FileData Type="Normal" Path="png/gameover_newrecord.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="btnShare" ActionTag="-1433636936" Tag="21" IconVisible="False" LeftMargin="103.2731" RightMargin="172.7269" TopMargin="290.0365" BottomMargin="95.9635" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="14" Scale9Height="17" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="44.0000" Y="39.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="125.2731" Y="115.4635" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3915" Y="0.2717" />
-            <PreSize X="0.1375" Y="0.0918" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="png/gameover_btn_share.png" Plist="" />
-            <NormalFileData Type="Normal" Path="png/gameover_btn_share.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="btnLeaderboard" ActionTag="1312603134" Tag="22" IconVisible="False" LeftMargin="172.7940" RightMargin="103.2060" TopMargin="289.8109" BottomMargin="96.1891" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="14" Scale9Height="17" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="44.0000" Y="39.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="194.7940" Y="115.6891" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.6087" Y="0.2722" />
-            <PreSize X="0.1375" Y="0.0918" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="png/gameover_btn_leaderboards.png" Plist="" />
-            <NormalFileData Type="Normal" Path="png/gameover_btn_leaderboards.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
           <AbstractNodeData Name="btnReload" ActionTag="-514730052" Tag="23" IconVisible="False" LeftMargin="106.0000" RightMargin="106.0000" TopMargin="350.5230" BottomMargin="20.4770" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="78" Scale9Height="32" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="108.0000" Y="54.0000" />
@@ -110,6 +80,51 @@
             <PrePosition X="0.5000" Y="0.4941" />
             <PreSize X="0.4437" Y="0.2047" />
             <FontResource Type="Normal" Path="fonts/Baloo-Regular.ttf" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="btnHome" ActionTag="1512228196" Tag="22" IconVisible="False" LeftMargin="55.2731" RightMargin="220.7269" TopMargin="290.1555" BottomMargin="95.8445" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="14" Scale9Height="17" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="44.0000" Y="39.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="77.2731" Y="115.3445" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.2415" Y="0.2714" />
+            <PreSize X="0.1375" Y="0.0918" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="png/gameover_btn_home.png" Plist="" />
+            <NormalFileData Type="Normal" Path="png/gameover_btn_home.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="btnLeaderboard" ActionTag="1425638449" Tag="23" IconVisible="False" LeftMargin="219.7941" RightMargin="56.2059" TopMargin="290.1555" BottomMargin="95.8445" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="14" Scale9Height="17" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="44.0000" Y="39.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="241.7941" Y="115.3445" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.7556" Y="0.2714" />
+            <PreSize X="0.1375" Y="0.0918" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="png/gameover_btn_leaderboards.png" Plist="" />
+            <NormalFileData Type="Normal" Path="png/gameover_btn_leaderboards.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="btnShare" ActionTag="450389180" Tag="24" IconVisible="False" LeftMargin="137.5336" RightMargin="138.4664" TopMargin="290.1555" BottomMargin="95.8445" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="14" Scale9Height="17" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="44.0000" Y="39.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="159.5336" Y="115.3445" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4985" Y="0.2714" />
+            <PreSize X="0.1375" Y="0.0918" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="png/gameover_btn_share.png" Plist="" />
+            <NormalFileData Type="Normal" Path="png/gameover_btn_share.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

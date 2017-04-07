@@ -23,7 +23,7 @@ Balloon::~Balloon() {
 }
 
 
-Balloon* Balloon::createSprite(Node* parent, int type, Vec2 position) {
+Balloon* Balloon::createSprite(Node* parent,int balloon_number, int type, Vec2 position) {
     std::string pngfile = FILE_BALLOON;
     
     int number = type;    
@@ -34,12 +34,16 @@ Balloon* Balloon::createSprite(Node* parent, int type, Vec2 position) {
         if (type == TYPE_BALLOON_MINUS_LIFE) pngfile = pngfile + "_life";
         if (type == TYPE_BALLOON_MINUS_SCORE) pngfile = pngfile + "_score";
         if (type == TYPE_BALLOON_SKULL) pngfile = pngfile + "_die";
+        if (type == TYPE_BALLOON_PLUS_LIFE) pngfile = pngfile + "_pluslife";
     }
     
     //auto sprite = Balloon::create(pngfile + "_1.png");    
     
     Balloon *sprite = new Balloon();
+    sprite->balloon_number = balloon_number;
     sprite->setAnchorPoint(Vec2(0.5f,0.5f));
+    sprite->setFlipX(false);
+    sprite->setFlipY(false);
     sprite->setTexture(pngfile + "_1.png");
     sprite->balloon_type = number;    
     sprite->gamescene = (GameScene*)parent;
@@ -49,9 +53,10 @@ Balloon* Balloon::createSprite(Node* parent, int type, Vec2 position) {
     log("level: %f", level);
     sprite->speed = RandomHelper::random_real(level*MIN_SPEED_INITIAL, level*MAX_SPEED_INITIAL);    
     auto min_x = sprite->getBoundingBox().size.width/2;
-    auto max_x = GeneralHelper::size.width - sprite->getBoundingBox().size.width/2; 
-    auto x = RandomHelper::random_real(min_x, max_x);
+    auto max_x = GeneralHelper::size.width - sprite->getBoundingBox().size.width/2;     
+    auto x = RandomHelper::random_real(min_x, max_x);    
     auto y = 0 - sprite->getBoundingBox().size.height/2;
+    log("cria balao (min_x, max_x, randomx, y): %f, %f, %f, %f", min_x, max_x, x, y);
     sprite->setPosition(Vec2(x,y));    
     parent->addChild(sprite);
     sprite->scheduleUpdate();
@@ -83,7 +88,7 @@ void Balloon::onHit() {
     
      if (this->balloon_type == TYPE_BALLOON_MINUS_LIFE) {
         state = BALLOON_STATE_DIE;
-        AssetsHelper::playEffect(SND_POP);
+        AssetsHelper::playEffect(SND_LIFE);
         gamescene->removeLife();        
         this->setTexture(file_name + "_pop.png");
         auto self = this;
@@ -98,7 +103,7 @@ void Balloon::onHit() {
     
     if (this->balloon_type == TYPE_BALLOON_MINUS_SCORE) {
         state = BALLOON_STATE_DIE;
-        AssetsHelper::playEffect(SND_POP);
+        AssetsHelper::playEffect(SND_SCORE);
         gamescene->removePoints(5);       
         this->setTexture(file_name + "_pop.png");
         auto self = this;
@@ -128,6 +133,22 @@ void Balloon::onHit() {
     }
     
     
+    if (this->balloon_type == TYPE_BALLOON_PLUS_LIFE) {
+        state = BALLOON_STATE_DIE;
+        AssetsHelper::playEffect(SND_LIFESCORE);
+        gamescene->addLife();
+        this->setTexture(file_name + "_pop.png");
+        auto self = this;
+        auto destroy = CallFunc::create([self] {
+            self->removeFromParent();
+        });
+        FadeOut* fadeOut = FadeOut::create(TIMER_DIE);
+        this->runAction(fadeOut);
+        this->runAction(Sequence::create(fadeOut, destroy, nullptr));
+        return;
+    }
+    
+    
 
     
     
@@ -138,10 +159,19 @@ void Balloon::update (float dt) {
     if (state == BALLOON_STATE_NORMAL) {
         auto y = this->getPositionY() + this->speed * dt;
         this->setPositionY(y);
+        timer_anim -= dt;
+        if (timer_anim<0) {
+            timer_anim = TIMER_ANIMATION;
+            currentframe = currentframe==1?2:1;
+            this->setTexture(file_name+"_"+ Value(currentframe).asString() + ".png");
+        }
+        
 
         if (y > GeneralHelper::size.height + this->getBoundingBox().size.height) {
-            if (this->balloon_type>=1 && this->balloon_type <=6)
+            if (this->balloon_type>=1 && this->balloon_type <=6) { 
                 gamescene->removeLife();
+                if (gamescene->getGameState() == GAME_STATE_PLAYING) AssetsHelper::playEffect(SND_LIFE);
+            }
             this->removeFromParent();            
         }
     }   

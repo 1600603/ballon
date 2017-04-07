@@ -1,0 +1,59 @@
+{
+    "android": {
+        "GoogleAnalytics": {
+            "trackingCode": "UA-73866939-4"
+        }, 
+        "AdMob": {
+            "test": true, 
+            "ads": {
+                "ingame": {
+                    "type": "banner", 
+                    "id": "ca-app-pub-6447762951176845/9112718213",
+                    "alignment": "bottom",
+                    "width": 0,
+                    "height": 0
+                }
+            }
+        }, 
+        "sdkboxplay": {
+            "leaderboards": [
+                {
+                    "id": "CgkIwv27jf8cEAIQAA", 
+                    "name": "rankingBest"
+                }
+            ], 
+            "connect_on_start": true, 
+            "show_achievement_notification": true, 
+            "debug": true
+        }
+    }, 
+    "ios": {
+        "GoogleAnalytics": {
+            "track_init_screen": false, 
+            "trackingCode": "UA-73866939-4"
+        }, 
+        "AdMob": {
+            "test": true, 
+            "ads": {
+                "ingame": {
+                    "type": "banner", 
+                    "id": "ca-app-pub-1329374026572143/1092476511",
+                    "alignment": "bottom",
+                    "width": 0,
+                    "height": 0
+                }
+            }
+        }, 
+        "sdkboxplay": {
+            "leaderboards": [
+                {
+                    "id": "CgkI0sux8sMWEAIQAA", 
+                    "name": "ldb1"
+                }
+            ], 
+            "connect_on_start": false, 
+            "show_achievement_notification": true, 
+            "debug": true
+        }
+    }
+}

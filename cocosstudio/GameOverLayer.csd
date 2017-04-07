@@ -17,13 +17,13 @@
             <FileData Type="Normal" Path="png/gameover_lbl_gameover.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnShare" ActionTag="-1433636936" Tag="21" IconVisible="False" LeftMargin="103.2731" RightMargin="172.7269" TopMargin="290.0365" BottomMargin="95.9635" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="14" Scale9Height="17" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btnShare" ActionTag="-1433636936" Tag="21" IconVisible="False" LeftMargin="137.5336" RightMargin="138.4664" TopMargin="290.1555" BottomMargin="95.8445" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="14" Scale9Height="17" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="44.0000" Y="39.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="125.2731" Y="115.4635" />
+            <Position X="159.5336" Y="115.3445" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3915" Y="0.2717" />
+            <PrePosition X="0.4985" Y="0.2714" />
             <PreSize X="0.1375" Y="0.0918" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
@@ -32,18 +32,45 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnLeaderboard" ActionTag="1312603134" Tag="22" IconVisible="False" LeftMargin="172.7940" RightMargin="103.2060" TopMargin="289.8109" BottomMargin="96.1891" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="14" Scale9Height="17" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btnLeaderboard" ActionTag="1312603134" Tag="22" IconVisible="False" LeftMargin="219.7941" RightMargin="56.2059" TopMargin="290.1555" BottomMargin="95.8445" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="14" Scale9Height="17" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="44.0000" Y="39.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="194.7940" Y="115.6891" />
+            <Position X="241.7941" Y="115.3445" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.6087" Y="0.2722" />
+            <PrePosition X="0.7556" Y="0.2714" />
             <PreSize X="0.1375" Y="0.0918" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
             <PressedFileData Type="Normal" Path="png/gameover_btn_leaderboards.png" Plist="" />
             <NormalFileData Type="Normal" Path="png/gameover_btn_leaderboards.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="btnHome" ActionTag="1314776057" Tag="14" IconVisible="False" LeftMargin="55.2731" RightMargin="220.7269" TopMargin="290.1555" BottomMargin="95.8445" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="14" Scale9Height="17" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="44.0000" Y="39.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="77.2731" Y="115.3445" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.2415" Y="0.2714" />
+            <PreSize X="0.1375" Y="0.0918" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="png/gameover_btn_home.png" Plist="" />
+            <NormalFileData Type="Normal" Path="png/gameover_btn_home.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="txtPoints" ActionTag="195003048" Tag="25" IconVisible="False" LeftMargin="142.5000" RightMargin="142.5000" TopMargin="171.5000" BottomMargin="166.5000" FontSize="55" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="35.0000" Y="87.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="160.0000" Y="210.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="160" G="90" B="45" />
+            <PrePosition X="0.5000" Y="0.4941" />
+            <PreSize X="0.1094" Y="0.2047" />
+            <FontResource Type="Normal" Path="fonts/Baloo-Regular.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -62,14 +89,14 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="txtPoints" ActionTag="195003048" Tag="25" IconVisible="False" LeftMargin="142.5000" RightMargin="142.5000" TopMargin="171.5000" BottomMargin="166.5000" FontSize="55" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="35.0000" Y="87.0000" />
+          <AbstractNodeData Name="txtBest" ActionTag="1903751291" Tag="20" IconVisible="False" LeftMargin="122.5000" RightMargin="122.5000" TopMargin="239.5000" BottomMargin="154.5000" FontSize="20" LabelText="best: 88" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="75.0000" Y="31.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="160.0000" Y="210.0000" />
+            <Position X="160.0000" Y="170.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="160" G="90" B="45" />
-            <PrePosition X="0.5000" Y="0.4941" />
-            <PreSize X="0.1094" Y="0.2047" />
+            <PrePosition X="0.5000" Y="0.4000" />
+            <PreSize X="0.2344" Y="0.0729" />
             <FontResource Type="Normal" Path="fonts/Baloo-Regular.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />

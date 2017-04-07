@@ -27,7 +27,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="TitleScene_balloon.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_2" ActionTag="-193836767" Tag="8" IconVisible="False" LeftMargin="84.0000" RightMargin="84.0000" TopMargin="344.5000" BottomMargin="41.5000" FontSize="25" LabelText="Pop To Start!" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="txtStart" ActionTag="-193836767" Tag="8" IconVisible="False" LeftMargin="84.0000" RightMargin="84.0000" TopMargin="344.5000" BottomMargin="41.5000" FontSize="25" LabelText="Pop To Start!" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="152.0000" Y="39.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="160.0000" Y="61.0000" />
