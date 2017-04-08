@@ -39,25 +39,26 @@ Balloon* Balloon::createSprite(Node* parent,int balloon_number, int type, Vec2 p
     
     //auto sprite = Balloon::create(pngfile + "_1.png");    
     
-    Balloon *sprite = new Balloon();
+    Balloon *sprite = new (std::nothrow) Balloon();
+    if (!sprite->initWithSpriteFrameName(pngfile +"_1.png")) return nullptr;
     sprite->balloon_number = balloon_number;
     sprite->setAnchorPoint(Vec2(0.5f,0.5f));
     sprite->setFlipX(false);
     sprite->setFlipY(false);
     //sprite->setTexture(pngfile + "_1.png");
-    sprite->setSpriteFrame(pngfile + "_1.png");
+    //sprite->setSpriteFrame(pngfile + "_1.png");
     sprite->balloon_type = number;    
     sprite->gamescene = (GameScene*)parent;
     auto current_points = sprite->gamescene->getPoints();
     float level = (1 +(current_points * SPEED_STEP));    
     level = level>MAX_SPEED_MULTIPLIER?MAX_SPEED_MULTIPLIER:level;
-    log("level: %f", level);
+    //log("level: %f", level);
     sprite->speed = RandomHelper::random_real(level*MIN_SPEED_INITIAL, level*MAX_SPEED_INITIAL);    
     auto min_x = sprite->getBoundingBox().size.width/2;
     auto max_x = GeneralHelper::size.width - sprite->getBoundingBox().size.width/2;     
     auto x = RandomHelper::random_real(min_x, max_x);    
     auto y = 0 - sprite->getBoundingBox().size.height/2;
-    log("cria balao (min_x, max_x, randomx, y): %f, %f, %f, %f", min_x, max_x, x, y);
+   // log("cria balao (min_x, max_x, randomx, y): %f, %f, %f, %f", min_x, max_x, x, y);
     sprite->setPosition(Vec2(x,y));    
     parent->addChild(sprite);
     sprite->scheduleUpdate();

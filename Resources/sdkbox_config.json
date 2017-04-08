@@ -4,14 +4,29 @@
             "trackingCode": "UA-73866939-4"
         }, 
         "AdMob": {
-            "test": true, 
+            "test": false,
             "ads": {
+                "gameover": {
+                    "type": "interstitial", 
+                    "id": "ca-app-pub-1329374026572143/1092476511"
+                }, 
                 "ingame": {
+                    "width": 0, 
                     "type": "banner", 
-                    "id": "ca-app-pub-6447762951176845/9112718213",
-                    "alignment": "bottom",
-                    "width": 0,
+                    "id": "ca-app-pub-6447762951176845/9112718213", 
+                    "alignment": "bottom", 
                     "height": 0
+                }, 
+                "rewarded": {
+                    "type": "rewarded_video", 
+                    "id": "ca-app-pub-1329374026572143/8251968111"
+                }, 
+                "home": {
+                    "width": 300, 
+                    "type": "banner", 
+                    "id": "ca-app-pub-1329374026572143/2685130917", 
+                    "alignment": "bottom", 
+                    "height": 50
                 }
             }
         }, 
@@ -22,9 +37,31 @@
                     "name": "rankingBest"
                 }
             ], 
+            "debug": false,
             "connect_on_start": true, 
-            "show_achievement_notification": true, 
-            "debug": true
+            "achievements": [
+                {
+                    "incremental": false, 
+                    "id": "CgkI0sux8sMWEAIQAg", 
+                    "name": "ten-games"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "CgkI0sux8sMWEAIQAw", 
+                    "name": "hunter"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "CgkI0sux8sMWEAIQBA", 
+                    "name": "craftsman"
+                }, 
+                {
+                    "incremental": true, 
+                    "id": "CgkI0sux8sMWEAIQBQ", 
+                    "name": "incremental"
+                }
+            ], 
+            "show_achievement_notification": true
         }
     }, 
     "ios": {
@@ -33,27 +70,84 @@
             "trackingCode": "UA-73866939-4"
         }, 
         "AdMob": {
-            "test": true, 
+            "test": false,
             "ads": {
+                "gameover": {
+                    "type": "interstitial", 
+                    "id": "ca-app-pub-1329374026572143/4185543717"
+                }, 
                 "ingame": {
+                    "width": 0, 
                     "type": "banner", 
-                    "id": "ca-app-pub-1329374026572143/1092476511",
-                    "alignment": "bottom",
-                    "width": 0,
+                    "id": "ca-app-pub-6447762951176845/7363456615", 
+                    "alignment": "bottom", 
                     "height": 0
+                }, 
+                "rewarded": {
+                    "type": "rewarded_video", 
+                    "id": "ca-app-pub-1329374026572143/7991602916"
+                }, 
+                "home": {
+                    "width": 300, 
+                    "type": "banner", 
+                    "id": "ca-app-pub-1329374026572143/3847466511", 
+                    "alignment": "bottom", 
+                    "height": 50
                 }
             }
         }, 
         "sdkboxplay": {
             "leaderboards": [
                 {
-                    "id": "CgkI0sux8sMWEAIQAA", 
-                    "name": "ldb1"
+                    "id": "rankingBest",
+                    "name": "rankingBest"
                 }
             ], 
-            "connect_on_start": false, 
-            "show_achievement_notification": true, 
-            "debug": true
+            "debug": false,
+            "connect_on_start": true, 
+            "achievements": [
+                {
+                    "incremental": false, 
+                    "id": "tengames", 
+                    "name": "ten-games"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "hunter", 
+                    "name": "hunter"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "craftsman", 
+                    "name": "craftsman"
+                }, 
+                {
+                    "incremental": true, 
+                    "id": "Incremental", 
+                    "name": "incremental"
+                }, 
+                {
+                    "incremental": false, 
+                    "id": "hidden_incremental", 
+                    "name": "hidden"
+                }, 
+                {
+                    "incremental": true, 
+                    "id": "flip_cards1", 
+                    "name": "flip_cards1"
+                }, 
+                {
+                    "incremental": true, 
+                    "id": "flip_cards2", 
+                    "name": "flip_cards2"
+                }, 
+                {
+                    "incremental": true, 
+                    "id": "flip_cards3", 
+                    "name": "flip_cards3"
+                }
+            ], 
+            "show_achievement_notification": true
         }
     }
 }

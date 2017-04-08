@@ -43,10 +43,12 @@ void GeneralHelper::loadConfig() {
     #ifdef SDKBOX_ENABLED
     sdkbox::PluginGoogleAnalytics::init();
     #endif
+    
     #ifdef SDKBOX_ENABLED
     sdkbox::PluginAdMob::init();
     sdkbox::PluginAdMob::setTestDevices("39545a171f3c5376,ad52654ca927ccd4");
     sdkbox::PluginAdMob::cache("ingame");
+   // log("admob loaded");
     #endif
 }
 
@@ -90,6 +92,7 @@ void GeneralHelper::logEvent(const std::string & eventCategory ,
 
 void GeneralHelper::showAd() {
     //if (GameHelper::no_ads) return;
+    
     #ifdef SDKBOX_ENABLED
     if (sdkbox::PluginAdMob::isAvailable("ingame"))
        sdkbox::PluginAdMob::show("ingame");

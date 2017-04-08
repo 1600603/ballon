@@ -60,7 +60,7 @@ bool TitleScene::init() {
     return true;
 }
 void TitleScene::setCallbacks(Node *parent) {
-    log("set callbacks");
+   // log("set callbacks");
     /*
     ui::Button *btnPlay = (ui::Button *)parent->getChildByName("btnPlay");
     btnPlay->setTouchEnabled(true);
@@ -83,7 +83,7 @@ void TitleScene::setCallbacks(Node *parent) {
         }
     });*/
 
-   log("set callbacks end");
+  // log("set callbacks end");
 }
 
 void TitleScene::drawBackground() {
@@ -146,7 +146,7 @@ void TitleScene::addEvents()
     listener->onTouchBegan = [self](cocos2d::Touch* touch, cocos2d::Event* event)
     {
         Vec2 p = touch->getLocation();
-        log("touch begin at x: %f; y: %f", p.x, p.y);
+      //  log("touch begin at x: %f; y: %f", p.x, p.y);
 
         auto nodeBox = self->ballo->getChildByName("balloon")->getBoundingBox();
 
@@ -160,7 +160,7 @@ void TitleScene::addEvents()
 
 
 	auto nodeRect = Rect(balloon_x, balloon_x, balloon_width, balloon_height);
-        log("ballon x: %f; y: %f", origin_world.x, origin_world.y);
+       // log("ballon x: %f; y: %f", origin_world.x, origin_world.y);
         if (nodeRect.containsPoint(p)) {
             //((Sprite*)self->ballo->getChildByName("balloon"))->setTexture("png/title_screen_ballon_pop.png");
             ((Sprite*)self->ballo->getChildByName("balloon"))->setSpriteFrame("png/title_screen_ballon_pop.png");
@@ -169,7 +169,7 @@ void TitleScene::addEvents()
             AssetsHelper::playEffect(SND_POP);
             auto scene = GameScene::createScene();
             Director::getInstance()->replaceScene(TransitionFade::create(1, scene, Color3B(0,0,0)));
-            log("OK");
+          //  log("OK");
         }
         return true; // we did not consume this event, pass thru.
     };

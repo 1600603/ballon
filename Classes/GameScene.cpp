@@ -57,6 +57,7 @@ bool GameScene::init()
 }
 
 void GameScene::update(float dt) {
+
     if (this->gamestate != GAME_STATE_PLAYING) return;
     //this->checkGameOver();
     timer_balloons += dt;
@@ -71,7 +72,7 @@ void GameScene::update(float dt) {
         else if (chance<=chance_balloon_lost_score) next_balloon = TYPE_BALLOON_MINUS_SCORE;
         else if (chance<=chance_balloon_plus_life) next_balloon = TYPE_BALLOON_PLUS_LIFE;
 
-        auto balao = Balloon::createSprite(this, balloon_count, next_balloon);
+        Balloon::createSprite(this, balloon_count, next_balloon);
         balloon_count++;
     }
 
@@ -174,7 +175,7 @@ GameState GameScene::getGameState() {
 void GameScene::resetGame() {
 	this->cleanLevel();
 	this->drawBackground();
-        log("dra ok")	;
+        //log("dra ok")	;
         auto status = CSLoader::createNode("res/StatusLayer.csb");
         status->setAnchorPoint(Vect(0.5f, 1.0f));
         status->setPosition(Vect(GeneralHelper::size.width/2, GeneralHelper::size.height));
@@ -316,7 +317,7 @@ void GameScene::drawBackground() {
 
 void GameScene::checkHit(Vec2 position) {
 
-    log ("enter hit: %f, %f", position.x, position.y);
+   // log ("enter hit: %f, %f", position.x, position.y);
     auto children = this->getChildren();
     auto count = this->getChildrenCount();
     Balloon *selected=nullptr;
@@ -342,12 +343,12 @@ void GameScene::checkHit(Vec2 position) {
 
             //auto zorder = child->getGlobalZOrder();
             auto zorder = ((Balloon*)child)->balloon_number;
-            log ("zorder: %d", zorder);
+           // log ("zorder: %d", zorder);
             if (selected != nullptr ) {
                 //if (zorder > selected->getGlobalZOrder()) {
                 if (zorder > ((Balloon*)selected)->balloon_number) {
                     selected = (Balloon*)child;
-                    log("maior");
+                   // log("maior");
                     continue;
                 }
             } else {
@@ -357,7 +358,7 @@ void GameScene::checkHit(Vec2 position) {
     }
 
     if (selected != nullptr) {
-        log("explode");
+       // log("explode");
         selected->onHit();
     }
 }
