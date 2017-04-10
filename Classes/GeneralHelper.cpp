@@ -93,7 +93,7 @@ void GeneralHelper::logEvent(const std::string & eventCategory ,
 void GeneralHelper::showAd() {
     //if (GameHelper::no_ads) return;
     #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    return;
+    //return;
 #endif
     
     #ifdef SDKBOX_ENABLED
