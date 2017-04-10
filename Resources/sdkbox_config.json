@@ -70,7 +70,8 @@
             "trackingCode": "UA-73866939-4"
         }, 
         "AdMob": {
-            "test": false,
+            "test": true,
+            "is_designed_for_families": true,
             "ads": {
                 "gameover": {
                     "type": "interstitial", 
